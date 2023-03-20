@@ -23,23 +23,33 @@ BusInOut  P5( PB_7,  PB_6, PB_9,  PB_8,  PA_15, PA_6,  PA_5,  PA_7  );	// GPIO-M
 BusInOut  P6( PC_6,  PC_7, PB_9,  PB_8,  PB_12, PB_14, PB_13, PB_15 );	// GPIO-Mixed
 */
 
-BusIn  funk( PC_0,  PC_1, PC_2,  PC_3,  PC_4,  PC_5,  PC_6,  PC_7  );		// GPIOC_L
+//BusIn  funk( PC_0,  PC_1, PC_2,  PC_3,  PC_4,  PC_5,  PC_6,  PC_7  );		// GPIOC_L
+
+InterruptIn T0(PC_0);
 
 Serial monitor(SERIAL_TX, SERIAL_RX); // PA_2 , PA_3  = Serial 2
 
+Timer eins;
+Timer zwei;
 /**** Funktionen ********************************************************************/
 
+void eins_start(){
+	eins.start();
+}
+
+void eins_stop(){
+	eins.stop();
+	if(eins.read_ms()>1000){
+		
+	}
+}
 
 /**** Hauptprogramm *****************************************************************/
+int bitzaehler = 0;
 
-int main() {
-  
-	bool test=0;	
-	
+int main() {	
 	while(1) {							// Endlosschleife
-		test=funk[0];
-			
-		monitor.printf("%d",test);
-		wait_ms(187);
+			T0.rise(&eins_start);
+			T0.fall(&eins_stop);
   }
 }													// END main
