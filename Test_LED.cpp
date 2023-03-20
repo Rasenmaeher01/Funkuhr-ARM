@@ -40,6 +40,6 @@ int main() {
 		test=funk[0];
 			
 		monitor.printf("%d",test);
-		wait_ms(17);
+		wait_ms(187);
   }
 }													// END main
