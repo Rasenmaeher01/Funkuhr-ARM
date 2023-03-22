@@ -93,8 +93,8 @@
       <flags>2</flags>
       <showCmd>3</showCmd>
       <MinPosition>
-        <xPos>-1</xPos>
-        <yPos>-1</yPos>
+        <xPos>-32000</xPos>
+        <yPos>-32000</yPos>
       </MinPosition>
       <MaxPosition>
         <xPos>-1</xPos>
@@ -1866,7 +1866,7 @@
       <Doc>
         <Name>.\Test_LED.cpp</Name>
         <ColumnNumber>13</ColumnNumber>
-        <TopLine>26</TopLine>
+        <TopLine>23</TopLine>
         <CurrentLine>40</CurrentLine>
         <Folding>1</Folding>
         <ContractedFolders></ContractedFolders>
